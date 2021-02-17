@@ -1,0 +1,61 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    
+}
+
+.upper{
+    background-color: white;
+    width: 100%;
+    height: 60vh;
+}
+
+.left-up{
+    display: flex;
+    float: left;
+    width: 50%;
+    height: 100%;
+    padding: 5% 3%;
+}
+
+.right-up{
+    display: flex;
+    float: right;
+    align-items: center;
+    justify-content: center;
+    width: 50%;
+}
+
+.btn {
+   
+    height: 5vh;
+    margin-top: 5%;
+}
+.button {
+    width: 15%;
+    height: 5vh;
+    margin-top: 5%;
+}
+
+
+.text{
+    font-family:'Courier New', Courier, monospace;
+    font-size: 2.9rem;
+    margin-top: 5%;
+    margin-left: 10%;
+    justify-content: left;
+    padding-right: 3%;
+    height: 100%;
+}
+
+.row{
+    margin: 2% 1%;
+    padding: 2% 2%;
+    justify-content: center;
+}
+
+.card{
+    margin: auto;
+    margin-top: 4%;
+}
