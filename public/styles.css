@@ -2,60 +2,74 @@
     padding: 0;
     margin: 0;
     box-sizing: border-box;
-    
+    overflow-x: none;
 }
 
+.row{
+    height: 100%;
+    margin: 2% 1%;
+    padding: 2% 2%;
+    margin-right: 0% !important;
+    margin-left: 0% !important;
+}
+
+.show1{
+    height: inherit;
+    text-align: center;
+}
+
+.show1 .row{
+    padding: 2% 2%;
+    margin: 0%;
+    text-align: right;
+}
+
+h1{
+    font-family:'Courier New', Courier, monospace;
+    font-size: 4rem !important;
+    letter-spacing: 2px;
+}
+
+
+/* Upper */
 .upper{
     background-color: white;
     width: 100%;
     height: 60vh;
 }
 
-.left-up{
-    display: flex;
-    float: left;
-    width: 50%;
+.image{
     height: 100%;
-    padding: 5% 3%;
+    padding: 3%;
 }
 
-.right-up{
-    display: flex;
-    float: right;
-    align-items: center;
-    justify-content: center;
-    width: 50%;
-}
-
-.btn {
-   
-    height: 5vh;
-    margin-top: 5%;
-}
-.button {
-    width: 15%;
-    height: 5vh;
-    margin-top: 5%;
+.btn{
+    width: 20%;
 }
 
 
-.text{
-    font-family:'Courier New', Courier, monospace;
-    font-size: 2.9rem;
-    margin-top: 5%;
-    margin-left: 10%;
-    justify-content: left;
-    padding-right: 3%;
-    height: 100%;
+
+
+@media(max-width: 991px){
+    .show1 .row{
+        text-align: center;
+    }
+    .btn{
+        width: 30%;
+    }
+    .image{
+        width: 90%;
+    }
 }
 
-.row{
-    margin: 2% 1%;
-    padding: 2% 2%;
-    justify-content: center;
-}
-
-.card{
-    margin: auto;
-    margin-top: 4%;
+@media(max-width: 700px) {
+    .show1 .row{
+        text-align: center;
+    }
+    .btn{
+        width: 30%;
+    }
+    .image{
+        width: 90%;
+    }
 }
