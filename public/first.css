@@ -17,3 +17,7 @@
     margin: auto;
     margin-top: 4%;
 }
+
+.card img{
+    height: 30vh;
+}
