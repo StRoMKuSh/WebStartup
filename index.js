@@ -11,7 +11,7 @@ app.set('view engine', 'ejs');
 // respond with "hello world" when a GET request is made to the homepage
 app.use(express.static("public"));
 
-mongoose.connect(process.env.MONGO_URL ||"mongodb://localhost:27017/knit",{useNewUrlParser : true ,  useUnifiedTopology: true  },(err)=>
+mongoose.connect(process.env.MONGO_URL ||"mongodb+srv://webstartup:Test123456@cluster0.jlc5g.mongodb.net/knit",{useNewUrlParser : true ,  useUnifiedTopology: true  },(err)=>
 {
     if(!err) 
     {console.log("u are connected with mongoose");}
@@ -31,7 +31,7 @@ const Branch = mongoose.model("Branch", branchSchema);
 
 
 app.get('/', function (req, res) {
-  res.sendFile(path.join(__dirname,'views/index.html'))
+  res.render("index");
 })
 
 app.get('/notes' , function(req,res){
