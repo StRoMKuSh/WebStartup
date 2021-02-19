@@ -1,0 +1,25 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    overflow-x: none;
+}
+
+.row{
+    height: 100%;
+    margin: 2% 1%;
+    padding: 2% 2%;
+    margin-right: 0% !important;
+    margin-left: 0% !important;
+}
+
+.card{
+    margin: auto;
+    margin-top: 4%;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.card img{
+    height: 30vh;
+    width: 100%;
+}
