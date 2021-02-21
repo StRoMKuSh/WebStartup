@@ -1,7 +1,7 @@
 <%- include ('partials/header'); -%>
 
     <!-- Css -->
-    <link rel="stylesheet" href="../first.css">
+    <link rel="stylesheet" href="/customize.css">
 
     <title>Document</title>
 </head>
@@ -9,53 +9,20 @@
 <body>
 
     <div class="row">
-        <% for(var i=0 ; i<res.length ; i++ ) { %>
+        <% for(var i=0 ; i<resl.length ; i++ ) { %>
         <div class="col-xl-6 col-12">
             <div class="card" style="width: 18rem;">
-                <img src="images/<%= res[i].img %>.jpg" class="card-img-top" alt="...">
+                <img src="images/<%= resl[i].img %>.jpg" class="card-img-top" alt="...">
                 <div class="card-body">
-                    <h5 class="card-title"><%= res[i].name %></h5>
+                    <h5 class="card-title"><%= resl[i].name %></h5>
                     <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
                         card's content.</p>
-                    <a href="<%=branch%>/<%=res[i].link%>" class="btn btn-primary">Click Here</a>
+                    <a href="/notes/<%=branch%>/<%=resl[i].link%>" class="btn btn-primary">Click Here</a>
                 </div>
             </div>
         </div>
         <% } %>
     </div>
 
-
+    <script src="/app.js"></script>
 <%- include ('partials/footer'); -%>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    <!-- 
-<div class="col-xl-6 col-12">
-            <div class="card" style="width: 18rem;">
-                <img src="images/man-programmer-working-computer-with-code-screen-illustration_87749-275.jpg" class="card-img-top" alt="...">
-                <div class="card-body">
-                    <h5 class="card-title"></h5>
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
-                        card's content.</p>
-                    <a href="#" class="btn btn-primary">Go somewhere</a>
-                </div>
-            </div>
-        </div> -->
