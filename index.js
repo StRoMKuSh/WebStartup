@@ -23,12 +23,21 @@ const branchSchema = new mongoose.Schema({
   name: {
       type: String,
       required: [true, "Please provide the name"],
-  } ,
-  img: Number,  
+  },
+  img: Number, 
+  link : String, 
 });
 
 const Branch = mongoose.model("Branch", branchSchema);
 
+const yearschema = new mongoose.Schema({
+  name : String,
+  img : String,
+  link : String
+});
+
+//YEAR model
+const Year = mongoose.model("Year",yearschema);
 
 app.get('/', function (req, res) {
   res.render("index");
@@ -36,15 +45,68 @@ app.get('/', function (req, res) {
 
 app.get('/notes' , function(req,res){
   Branch.find((err , results)=> {
+
     res.render("first" , {
       res : results,
     });
   });
 });
 
+
+app.get("/notes/:xyz", function(req , res){
+  const links = req.params.xyz;
+  Year.find({
+    link : links
+  } , function(err , results){
+    if(!err){
+      res.render("first",{
+        res : results,
+      });
+    }
+    else console.log(err);
+  });
+});
+
+
 const PORT = 8080;
 
 app.listen(PORT,()=>
 {
-    console.log("Your server is started at port "+PORT);
+    console.log("Your server is started at port"+PORT);
 });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// app.get("/:xyz", function(req , res){
+//   const links = req.params.xyz;
+//   Branch.findOne({
+//     link : links
+//   }, function(err , results){
+//     res.render("first" , {
+//       res : results,
+//     });
+//   });  
+// });
