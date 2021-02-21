@@ -19,25 +19,58 @@ mongoose.connect(process.env.MONGO_URL ||"mongodb+srv://webstartup:Test123456@cl
     {console.log("u r failed"+err);}
 });
 
+
 const branchSchema = new mongoose.Schema({
   name: {
       type: String,
       required: [true, "Please provide the name"],
+<<<<<<< HEAD
   },
   img: Number, 
   link : String, 
+=======
+  } ,
+  img: Number,  
+  link : String
+>>>>>>> upstream/main
 });
-
 const Branch = mongoose.model("Branch", branchSchema);
 
 const yearschema = new mongoose.Schema({
   name : String,
+<<<<<<< HEAD
   img : String,
   link : String
 });
 
 //YEAR model
 const Year = mongoose.model("Year",yearschema);
+=======
+  img : Number,
+  link : String
+})
+
+//YEAR model
+const Year = mongoose.model("Year",yearschema);
+
+
+
+
+
+const semschema = new mongoose.Schema({
+  name : String,
+  img : Number
+});
+
+const sems = mongoose.model("semester",semschema);
+
+// const schemabnarhehai  = new sems({
+//     name: "Ninth Semester",
+//     img : "8"
+// });
+
+// schemabnarhehai.save();
+>>>>>>> upstream/main
 
 app.get('/', function (req, res) {
   res.render("index");
@@ -45,11 +78,44 @@ app.get('/', function (req, res) {
 
 app.get('/notes' , function(req,res){
   Branch.find((err , results)=> {
+<<<<<<< HEAD
 
     res.render("first" , {
+=======
+    res.render("branch" , {
       res : results,
     });
   });
+});
+
+
+app.get('/notes/:branches' , function(req,res){
+    console.log(req.params.branches);
+  Year.find((err , results)=> {
+    res.render("year" , {
+>>>>>>> upstream/main
+      res : results,
+      branch : req.params.branches
+    });
+    
+  });
+
+});
+
+
+app.get('/notes/:branches/:year' , function(req,res){
+  console.log(req.params.year);
+  const k = req.params.year;
+
+    sems.find({select:k},(err , results)=> {
+      res.render("sem" , {
+        res : results,
+      });
+      console.log(results);
+      
+    });
+ 
+ 
 });
 
 
@@ -85,6 +151,7 @@ app.listen(PORT,()=>
 
 
 
+<<<<<<< HEAD
 
 
 
@@ -110,3 +177,13 @@ app.listen(PORT,()=>
 //     });
 //   });  
 // });
+=======
+// app.get("/:id",(req,res)=>{
+//   console.log("run");
+//   Year.find((err,results)=>{
+//     res.render("first" ,{
+//           res : results,
+//     })
+//   })
+// })
+>>>>>>> upstream/main
