@@ -50,8 +50,8 @@ const Year = mongoose.model("Year", yearschema);
 const semschema = new mongoose.Schema({
   name: String,
   img: Number,
-  select : String,
-  link : String,
+  select: String,
+  link: String,
 });
 
 const sems = mongoose.model("semester", semschema);
@@ -59,11 +59,27 @@ const sems = mongoose.model("semester", semschema);
 const subjectschema = new mongoose.Schema({
   name: String,
   img: Number,
-  select : String,
-  link : String,
+  select: String,
+  link: String,
 });
 
 const subject = mongoose.model("subjects", subjectschema);
+
+const contentschema = new mongoose.Schema({
+  unit: String,
+  select: String,
+});
+
+const content = mongoose.model("contents", contentschema);
+
+const pdfschema = new mongoose.Schema({
+  pdf: String,
+  select: String,
+  name: String,
+  unit: String,
+});
+
+const pdf = mongoose.model("pdfs", pdfschema);
 
 
 app.get('/', function (req, res) {
@@ -104,17 +120,39 @@ app.get('/notes/:branches/:year', function (req, res) {
   });
 });
 
-app.get('/notes/:branches/:year/:sem' ,function(req , res){
+app.get('/notes/:branches/:year/:sem', function (req, res) {
   var a = req.params.branches;
   var b = req.params.year;
   var c = req.params.sem;
-  var d = a+b+c;
-  subject.find({select : d} , (err, results) => {
-    res.render("subject" , {
+  var d = a + b + c;
+  subject.find({
+    select: d
+  }, (err, results) => {
+    res.render("subject", {
       resl: results,
       branch: req.params.branches,
       year: req.params.year,
-      sems : req.params.sem,
+      sems: req.params.sem,
+    });
+  });
+});
+
+
+app.get('/notes/:branches/:year/:sem/:subject', function (req, res) {
+  var a = req.params.branches;
+  var b = req.params.year;
+  var c = req.params.sem;
+  var d = req.params.subject;
+  var e = a + b + c + d;
+
+  content.find({
+    select: e
+  }, (err, results1) => {
+    pdf.find({select : e}, (err, results2) => {
+      res.render("content", {
+        res1: results1,
+        res2: results2,
+      });
     });
   });
 });
@@ -124,16 +162,5 @@ const PORT = 8080;
 app.listen(PORT, () => {
   console.log("Your server is started at port " + PORT);
 });
-
-
-
-
-
-
-
-
-
-
-
 
 
