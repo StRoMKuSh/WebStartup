@@ -1,0 +1,70 @@
+<%- include ('partials/header'); -%>
+
+<!-- Css -->
+<link rel="stylesheet" href="/content.css">
+
+<title>Document</title>
+</head>
+
+<body>
+    <div class="row">
+        <div class="col-12">
+            <h1>Notes</h1>
+            <% for(var i = 0; i<res1.length ; i++) { %>
+            <div class="dropdown">
+                <button class="btn btn-info dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <h2>Unit <%=res1[i].unit%></h2>
+                </button>
+                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">    
+                    <% for(var j = 0; j<res2.length ; j++) { %>
+                    <% if(res1[i].unit == res2[j].unit){ %>
+                        <a class="dropdown-item" href="<%=res2[j].pdf%>"><%=res2[j].name%></a>
+                    <% } %>
+                    <% } %>               
+                </div>
+            </div>  
+            <% } %>      
+        </div>
+    </div>
+
+
+    <%- include ('partials/footer'); -%>
+
+
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- <h1>Notes</h1>
+    <% for(var i = 0; i<res1.length ; i++) { %>
+        <h2>Unit <%=res1[i].unit%></h2>
+        
+        <% for(var j = 0; j<res2.length ; j++) { %>
+            <% if(res1[i].unit == res2[j].unit){ %>
+                <a href="<%=res2[j].pdf%>"><%=res2[j].name%></a>
+                <br>
+            <% } %>
+        <% } %> 
+    <% } %> -->
