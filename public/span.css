@@ -78,10 +78,7 @@
 .action ul li i {
     margin-right: 10px;
     opacity: 0.2;
-<<<<<<< HEAD
-=======
     transform: scale(1);
->>>>>>> upstream/main
 }
 
 .action ul li:hover i {
