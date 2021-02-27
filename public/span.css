@@ -1,0 +1,88 @@
+.action {
+    position: fixed;
+    bottom: 50px;
+    right: 50px;
+    width: 50px;
+    height: 50px;
+    background: #17a2b8;
+    border-radius: 50%;
+    cursor: pointer;
+    box-shadow: 10px 15px 10px rgba(0, 0 , 0, 0.1);
+
+}
+
+.action span {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 2rem;
+    transform: translate(0%, -8%);
+}
+
+.action.active span {
+
+    transform: rotate(135deg);
+    left: 3px;
+    bottom: -2px;
+}
+
+.action ul {
+    position: absolute;
+    bottom: 55px;
+    right: 5px;
+    bottom: 50px;
+    right: -31px;
+    background: #17a2b8;
+    min-width: 250px;
+    padding: 20px;
+    border-radius: 20px;
+    opacity: 0;
+    visibility: hidden;
+    transition: 0.3s;
+    box-shadow: 10px 15px 10px rgba(0, 0 , 0, 0.1);
+}
+
+.action.active ul {
+    opacity: 1;
+    visibility: visible;
+    transition: 0.3s ease-in;
+}
+
+.action ul li {
+    list-style: none;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 10px 0;
+    color: white;
+}
+
+.action ul li:hover {
+    font-weight: 600;
+}
+
+.action ul li:not(:last-child) {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.action ul li i {
+    margin-right: 10px;
+    opacity: 0.2;
+    transform: scale(1);
+}
+
+.action ul li:hover i {
+    opacity: 0.8;
+}
+
+a{
+    color: white;
+}
+a:hover{
+    text-decoration: none;
+    color: white;
+}

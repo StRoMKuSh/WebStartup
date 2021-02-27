@@ -1,0 +1,26 @@
+<%- include ('partials/header'); -%>
+
+    <!-- Css -->
+    <link rel="stylesheet" href="/customize.css">
+
+    <title>Document</title>
+</head>
+
+<body>
+
+    <div class="row">
+        <% for(var i=0 ; i<resl.length ; i++ ) { %>
+        <div class="col-xl-6 col-12">
+            <div class="card" style="width: 18rem;">
+                <img src="/images/<%=resl[i].img%>.jpg" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title"><%= resl[i].name %></h5>
+                    <p class="card-text">Select Your Semester</p>
+                    <a href="/notes/<%=branch%>/<%=year%>/<%=resl[i].link%>" class="btn btn-primary">Click Here</a>
+                </div>
+            </div>
+        </div>
+        <% } %>
+    </div>
+
+<%- include ('partials/footer'); -%>
