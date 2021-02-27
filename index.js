@@ -39,7 +39,7 @@ const Branch = mongoose.model("Branch", branchSchema);
 
 const yearschema = new mongoose.Schema({
   name: String,
-  img: Number,
+  img: String,
   link: String
 })
 
@@ -49,7 +49,7 @@ const Year = mongoose.model("Year", yearschema);
 
 const semschema = new mongoose.Schema({
   name: String,
-  img: Number,
+  img: String,
   select: String,
   link: String,
 });
@@ -58,7 +58,7 @@ const sems = mongoose.model("semester", semschema);
 
 const subjectschema = new mongoose.Schema({
   name: String,
-  img: Number,
+  img: String,
   select: String,
   link: String,
 });
@@ -120,6 +120,7 @@ app.get('/notes/:branches/:year', function (req, res) {
   });
 });
 
+
 app.get('/notes/:branches/:year/:sem', function (req, res) {
   var a = req.params.branches;
   var b = req.params.year;
@@ -128,12 +129,17 @@ app.get('/notes/:branches/:year/:sem', function (req, res) {
   subject.find({
     select: d
   }, (err, results) => {
-    res.render("subject", {
-      resl: results,
-      branch: req.params.branches,
-      year: req.params.year,
-      sems: req.params.sem,
-    });
+    if(results.length === 0){
+      res.render("error");
+    }
+    else{
+      res.render("subject", {
+        resl: results,
+        branch: req.params.branches,
+        year: req.params.year,
+        sems: req.params.sem,
+      });
+    }   
   });
 });
 

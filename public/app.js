@@ -1,3 +1,4 @@
-const image = document.querySelector('.image');
-
-const tl = new TimelineMax();
+function actionToggle(){
+    var action = document.querySelector('.action');
+    action.classList.toggle('active')
+}
