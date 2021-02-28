@@ -62,6 +62,10 @@ h1{
     
 }
 
+i{
+    cursor: pointer;
+}
+
 #lower{
     height: 40%;
 }

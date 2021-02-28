@@ -134,6 +134,12 @@ app.post('/email', (req, res) => {
 
 });
 
+app.get('/dev', function (req, res) {
+  res.render("dev");
+  //__dirname : It will resolve to your project folder.
+});
+
+
 
 const PORT = 8080;
 
